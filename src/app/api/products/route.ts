@@ -24,29 +24,3 @@ export async function POST(req: NextResponse) {
   }
 }
 
-export async function PUT(req: NextResponse) {
-  try {
-    console.log('gbfs')
-    await connect();
-    const { id, name, category, price, stock } = await req.json();
-    console.log(id)
-    const updatedProduct = await Product.findByIdAndUpdate(
-      id,
-      { name, category, price, stock },
-      { new: true }
-    );
-    if (!updatedProduct) {
-      return NextResponse.json(
-        { message: "Product not found" },
-        { status: 404 }
-      );
-    }
-    return NextResponse.json({ updatedProduct });
-  } catch (error) {
-    return NextResponse.json({ message: "Error: " + error }, { status: 500 });
-  }
-}
-
-export async function DELETE() {
-  return NextResponse.json({ meesge: "DELETE" });
-}
