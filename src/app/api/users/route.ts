@@ -1,11 +1,11 @@
 import connect from "@/app/lib/db/mongo-db";
-import City from "@/app/lib/moduls/city";
+import User from "@/app/lib/moduls/user";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
     await connect();
-    const data = await City.find();
+    const data = await User.find();
     return NextResponse.json({ message: "successfull", data });
   } catch (error) {
     return NextResponse.json("Error in fetching " + error);
@@ -15,10 +15,10 @@ export async function GET() {
 export async function POST(req: NextResponse) {
   try {
     await connect();
-    const { name, country, population, area } = await req.json();
-    const city = new City({ name, country, population, area });
-    await city.save();
-    return NextResponse.json({ newCity: city });
+    const { UserName, password, email } = await req.json();
+    const user = new User({ UserName, password, email });
+    await user.save();
+    return NextResponse.json({ newUser: user });
   } catch (error) {
     return NextResponse.json({ message: "Error: " + error }, { status: 500 });
   }

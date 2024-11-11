@@ -1,5 +1,5 @@
 import React from 'react'
-import Contact from '@/app/components/Contact'
+import Contact from '@/app/components/auth'
 
 const page = () => {
   return (
