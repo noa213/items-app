@@ -3,12 +3,12 @@ import NavLink from "./NavLink";
 
 const NavBar = () => {
   const links = [
-    { href: "/pages/contact", text: "sing-in" },
-    { href: "/pages/contact", text: "log-in" },
+    // { href: "/pages/auth", text: "sing-in" },
+    // { href: "/pages/auth", text: "log-in" },
     { href: "/pages/products", text: "products" },
     { href: "/pages/cities", text: "cities" },
     { href: "/pages/books", text: "books" },
-    { href: "/pages/contact", text: "sing-out" },
+    { href: "/pages/auth", text: "sing-out" },
   ];
   return (
     <div className="bg-gray-800 flex items-baseline space-x-4">

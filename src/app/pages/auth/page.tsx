@@ -1,9 +1,9 @@
 import React from 'react'
-import Contact from '@/app/components/auth'
+import Auth from '@/app/components/Auth'
 
 const page = () => {
   return (
-    <div><Contact /></div>
+    <div><Auth /></div>
   )
 }
 
