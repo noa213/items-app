@@ -6,7 +6,6 @@
 import IError from "@/app/types/error";
 import React, { useState } from "react";
 import { z, ZodError } from "zod";
-import axios from "axios";
 
 const Auth = () => {
   //   const navigate = useNavigate();
@@ -58,7 +57,6 @@ const Auth = () => {
       userSchema.parse(validData);
       alert("User registered successfully!");
 
-      setCards(response.data);
   
       //     const data = await fetch("http://localhost:3090/customers/signIn", {
       //       method: "PUT",
